@@ -35,7 +35,17 @@ class TestUI extends Component {
             </View>
             <Text style = {styles.projectDescription}>Enter a description...</Text>
             <View style = {styles.divider}/>
-            <Text style = {styles.createdAt}>Created on Aug 20, 2015</Text>
+            <View style = {styles.titleAndIcon}>
+              <Text style={{flex: 1}}>
+                <Text style = {styles.createdAt}>Created on Aug 20, 2015</Text>
+              </Text>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Text>Read more</Text>
+              <Image style = {styles.iconPlaceholder}
+                     source = {require('./rightarrow.png')}/>
+              </View>
+              </View>
+
           </View>
       </View>
 
@@ -111,7 +121,7 @@ const styles = StyleSheet.create({
 
   detailTitle: {
     color: '#009688',
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
   },
 
   detailDescription: {
