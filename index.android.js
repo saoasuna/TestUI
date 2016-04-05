@@ -12,6 +12,8 @@ import React, {
   View
 } from 'react-native';
 
+// looking to replace all colors that are #dfdddc to something a bit darker? not sure yet..
+
 class TestUI extends Component {
   render() {
     return (
@@ -22,7 +24,7 @@ class TestUI extends Component {
           <Image style={styles.image}
                   source={require('./image1.png')}/>
           </View>
-          <View style={styles.text}>
+          <View style={styles.cardContent}>
             <View style = {styles.titleAndIcon}>
               <Text style={{flex: 1}}>
                 <Text style = {styles.projectTitle}>Missing drywall</Text>
@@ -35,15 +37,23 @@ class TestUI extends Component {
             <View style = {styles.divider}/>
             <Text style = {styles.createdAt}>Created on Aug 20, 2015</Text>
           </View>
-          
-
-
-
-
-
-
-        
       </View>
+
+      <View style={styles.verticalPadding10}/>
+
+      <View style={styles.itemCard}>
+      <View style={styles.cardContent}>
+       <View style = {styles.titleAndIcon}>
+              <Text style={{flex: 1}}>
+                <Text style = {styles.detailTitle}>Location</Text>
+              </Text>
+              <Image style = {styles.iconPlaceholder}
+                    source = {require('./edit.png')}/>
+        </View>
+        <Text style = {styles.detailDescription}>Floor 01</Text>
+        </View>
+        </View>
+
       </View>
     );
   }
@@ -92,11 +102,20 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
-  text: {
+  cardContent: {
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
     paddingTop: 10,
+  },
+
+  detailTitle: {
+    color: '#009688',
+    fontWeight: 'bold',
+  },
+
+  detailDescription: {
+    color: '#000000',
   },
 
   projectDescription: {
@@ -104,7 +123,8 @@ const styles = StyleSheet.create({
   },
 
   iconPlaceholder: {
-    alignSelf: 'flex-end',
+    height: 14,
+    width: 14,
   },
 
 
